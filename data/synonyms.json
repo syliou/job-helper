@@ -1,0 +1,67 @@
+{
+  "process optimization": [
+    "optimized reaction conditions",
+    "optimized treatment conditions",
+    "improved process performance",
+    "treatment optimization",
+    "optimized operating conditions"
+  ],
+  "data analysis": [
+    "data interpretation",
+    "interpreted water chemistry datasets",
+    "analyzed water quality data",
+    "interpreted treatment performance data",
+    "evaluated technical datasets"
+  ],
+  "data interpretation": [
+    "interpreted water chemistry datasets",
+    "analyzed treatment performance",
+    "evaluated water quality trends",
+    "diagnosed water chemistry effects"
+  ],
+  "pilot testing": [
+    "laboratory-scale evaluation",
+    "bench-scale testing",
+    "pilot-scale testing",
+    "lab-scale evaluation",
+    "experimental evaluation"
+  ],
+  "water treatment": [
+    "treatment performance",
+    "water quality evaluation",
+    "contaminant removal",
+    "treatment process"
+  ],
+  "UPW": [
+    "ultrapure water",
+    "high purity water",
+    "trace contaminant control"
+  ],
+  "ultrapure water": [
+    "UPW",
+    "high purity water",
+    "trace contaminant control"
+  ],
+  "AOP": [
+    "advanced oxidation",
+    "ozone UV",
+    "UV ozone",
+    "oxidation process"
+  ],
+  "advanced oxidation": [
+    "AOP",
+    "ozone UV",
+    "UV ozone",
+    "oxidation process"
+  ],
+  "byproduct control": [
+    "DBP control",
+    "byproduct formation",
+    "disinfection byproduct control"
+  ],
+  "reaction kinetics": [
+    "kinetic analysis",
+    "reaction rate",
+    "oxidant demand"
+  ]
+}

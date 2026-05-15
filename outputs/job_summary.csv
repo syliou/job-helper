@@ -1,0 +1,3 @@
+job_file,job_type,fit_category,match_rate,matched_keywords,missing_keywords,recommendation,report_file
+Carollo Engineers_Wastewater_Process_Mechanical_Engineer_Entry_Level.txt,Wastewater Treatment Engineer,Moderate fit,68,"water treatment, wastewater, data analysis, environmental engineering",,Apply after tailoring resume,outputs\Carollo Engineers_Wastewater_Process_Mechanical_Engineer_Entry_Level_review.md
+Formosa_Plastics_Process Engineer_I.txt,Process Engineer,Moderate-low fit,49,,,Apply after tailoring resume,outputs\Formosa_Plastics_Process Engineer_I_review.md

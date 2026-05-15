@@ -1,0 +1,114 @@
+{
+  "Water Treatment Engineer": {
+    "detection_patterns": ["water treatment", "drinking water", "treatment plant", "filtration", "disinfection", "contaminant removal", "water quality"],
+    "priority_skills": ["water treatment", "treatment performance", "water quality", "contaminant removal", "process evaluation", "technical reporting"],
+    "preferred_language_style": "Applied engineering language focused on treatment performance, water quality outcomes, practical recommendations, and process decisions.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["data interpretation", "laboratory analysis", "pilot testing", "troubleshooting", "technical reporting"],
+    "operational_process_emphasis": "medium",
+    "reporting_consulting_emphasis": "medium",
+    "role_traits": {
+      "treatment performance": ["treatment performance", "contaminant removal", "water quality", "process evaluation"],
+      "applied process understanding": ["process", "operation", "optimization", "troubleshooting", "design"],
+      "technical reporting": ["reporting", "documentation", "analysis", "assessment", "recommendation"]
+    }
+  },
+  "Wastewater Treatment Engineer": {
+    "detection_patterns": ["wastewater", "wastewater treatment", "biological treatment", "activated sludge", "secondary treatment", "wastewater treatment plant", "hydraulics", "BioWin", "GPSX", "Sumo"],
+    "priority_skills": ["wastewater", "water treatment", "treatment performance", "process engineering", "data analysis", "hydraulics", "technical reporting"],
+    "preferred_language_style": "Design-support and treatment-process language tied to wastewater performance, modeling, plant constraints, and practical engineering decisions.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["water quality interpretation", "process evaluation", "technical reporting", "project coordination", "laboratory analysis"],
+    "operational_process_emphasis": "high",
+    "reporting_consulting_emphasis": "medium",
+    "role_traits": {
+      "wastewater process knowledge": ["wastewater", "biological treatment", "treatment plant", "activated sludge"],
+      "wastewater modeling or design support": ["wastewater modeling", "BioWin", "GPSX", "Sumo", "process mechanical design", "hydraulics"],
+      "technical deliverables": ["technical memorandum", "report", "plans", "specifications", "cost estimate"]
+    }
+  },
+  "Process Engineer": {
+    "detection_patterns": ["process engineer", "process engineering", "process optimization", "process control", "operations", "plant", "equipment", "production", "MOC", "P&ID"],
+    "priority_skills": ["process optimization", "process control", "process engineering", "troubleshooting", "plant operations", "equipment support"],
+    "preferred_language_style": "Operational, plant-facing language focused on troubleshooting, optimization, equipment, process conditions, safety, and production impact.",
+    "acceptable_academic_level": "low",
+    "transferable_engineering_skills": ["troubleshooting", "data analysis", "technical reporting", "process support", "project coordination"],
+    "operational_process_emphasis": "high",
+    "reporting_consulting_emphasis": "low",
+    "role_traits": {
+      "optimization and process improvement": ["optimize", "optimized", "optimization", "improved", "process improvement"],
+      "operations and equipment language": ["operation", "operations", "plant", "equipment", "production", "startup"],
+      "troubleshooting and process control": ["troubleshoot", "troubleshooting", "process control", "root cause", "corrective action"]
+    }
+  },
+  "Environmental Engineer": {
+    "detection_patterns": ["environmental engineer", "environmental engineering", "wastewater", "stormwater", "compliance", "permitting", "regulatory", "environmental report"],
+    "priority_skills": ["environmental engineering", "wastewater", "water quality", "technical reporting", "compliance", "regulatory reporting"],
+    "preferred_language_style": "Practical environmental engineering language tied to compliance, water quality, reporting, treatment performance, and project support.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["data interpretation", "technical reporting", "laboratory analysis", "project coordination", "treatment performance"],
+    "operational_process_emphasis": "medium",
+    "reporting_consulting_emphasis": "high",
+    "role_traits": {
+      "compliance and reporting": ["compliance", "permit", "regulatory", "reporting", "standard"],
+      "water quality and treatment": ["water quality", "wastewater", "treatment", "contaminant", "environmental"],
+      "project support": ["project", "design", "assessment", "evaluation", "documentation"]
+    }
+  },
+  "Environmental Consultant": {
+    "detection_patterns": ["consulting", "consultant", "client", "proposal", "technical memorandum", "project delivery", "engineering services", "client presentation"],
+    "priority_skills": ["technical reporting", "client communication", "project coordination", "data analysis", "environmental engineering", "water treatment"],
+    "preferred_language_style": "Client-ready consulting language focused on reports, presentations, recommendations, project work, and defensible engineering judgment.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["technical reporting", "data interpretation", "project coordination", "client communication", "presentation"],
+    "operational_process_emphasis": "low",
+    "reporting_consulting_emphasis": "high",
+    "role_traits": {
+      "communication and reporting": ["report", "reporting", "technical memorandum", "presentation", "communicated", "documentation"],
+      "project-oriented wording": ["project", "projects", "design", "proposal", "deliverable", "client"],
+      "engineering decision support": ["recommendation", "evaluation", "assessment", "design support", "engineering decision"]
+    }
+  },
+  "UPW Engineer": {
+    "detection_patterns": ["UPW", "ultrapure water", "semiconductor", "fab", "cleanroom", "high purity water", "RO", "reverse osmosis", "TOC"],
+    "priority_skills": ["UPW", "ultrapure water", "semiconductor", "RO", "reverse osmosis", "trace contaminant control", "treatment chemistry", "water quality"],
+    "preferred_language_style": "High-purity water language focused on semiconductor relevance, trace contaminant control, treatment chemistry, polishing processes, and water quality.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["advanced oxidation", "ozone", "UV", "reaction kinetics", "data interpretation", "analytical method development"],
+    "operational_process_emphasis": "high",
+    "reporting_consulting_emphasis": "medium",
+    "role_traits": {
+      "semiconductor / high-purity context": ["semiconductor", "fab", "cleanroom", "high purity", "UPW", "ultrapure water"],
+      "membrane or polishing process relevance": ["RO", "reverse osmosis", "polishing", "filtration", "ion exchange"],
+      "trace contaminant control": ["trace contaminant", "contaminant control", "TOC", "water quality"]
+    }
+  },
+  "Industrial Water Engineer": {
+    "detection_patterns": ["industrial water", "industrial wastewater", "water reuse", "reclamation", "manufacturing", "facility water", "process water", "science park"],
+    "priority_skills": ["industrial wastewater", "water reuse", "process engineering", "water quality", "troubleshooting", "treatment performance"],
+    "preferred_language_style": "Industrial and facility-facing language focused on water quality, reuse, troubleshooting, process performance, compliance, and operational reliability.",
+    "acceptable_academic_level": "moderate",
+    "transferable_engineering_skills": ["data analysis", "treatment performance", "technical reporting", "process troubleshooting", "analytical support"],
+    "operational_process_emphasis": "high",
+    "reporting_consulting_emphasis": "medium",
+    "role_traits": {
+      "industrial water context": ["industrial water", "industrial wastewater", "water reuse", "reclamation", "manufacturing"],
+      "process and operations relevance": ["process", "operation", "troubleshooting", "performance", "quality"],
+      "compliance or reliability": ["compliance", "exceedance", "reliability", "shutdown", "upset"]
+    }
+  },
+  "R&D Engineer/Scientist (Water)": {
+    "detection_patterns": ["research", "scientist", "R&D", "laboratory", "bench-scale", "experimental", "reaction kinetics", "publication", "technology development"],
+    "priority_skills": ["AOP", "advanced oxidation", "reaction kinetics", "laboratory analysis", "pilot testing", "experimental design", "treatment chemistry"],
+    "preferred_language_style": "Technical research language is acceptable when connected to treatment performance, experimental evidence, scale-up potential, or applied water outcomes.",
+    "acceptable_academic_level": "high",
+    "transferable_engineering_skills": ["experimental design", "data interpretation", "analytical method development", "technical reporting", "pilot testing"],
+    "operational_process_emphasis": "low",
+    "reporting_consulting_emphasis": "medium",
+    "role_traits": {
+      "experimental and lab evidence": ["experiment", "experimental", "laboratory", "bench-scale", "lab-scale", "pilot"],
+      "scientific depth": ["reaction kinetics", "mechanistic", "chemistry", "publication", "research"],
+      "translation to application": ["developed", "evaluated", "performance", "scale", "application"]
+    }
+  }
+}
