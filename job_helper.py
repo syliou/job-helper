@@ -733,13 +733,10 @@ def create_job_type_notes(job_type):
             "Connect technical analysis to practical environmental engineering decisions.",
         ]
     if role_name_has(job_type, "wastewater"):
-        if has_data or has_water_quality:
-            sentences.append(
-                "Brings water quality data interpretation and treatment performance evaluation experience that can support wastewater process analysis."
-            )
-        sentences.append(
-            "Tailoring should address the JD's specific design, modeling, hydraulics, and deliverable requirements only where supported."
-        )
+        return [
+            "Prioritize wastewater treatment performance, water quality, process analysis, and technical reporting.",
+            "Tailoring should address the JD's specific design, modeling, hydraulics, and deliverable requirements only where supported.",
+        ]
     elif role_name_has(job_type, "consult"):
         return [
             "Prioritize client-facing technical reporting, design support, project work, and clear communication.",
@@ -945,6 +942,96 @@ def section_importance(keyword, keyword_sections):
     return 0.60
 
 
+def starts_like_resume_bullet(line):
+    """Return True if a line starts with a common resume bullet marker."""
+    return line.startswith(("-", "*", "•", "–"))
+
+
+def clean_resume_bullet_marker(line):
+    """Remove a leading bullet marker from a resume line."""
+    return line.lstrip("-*•– ").strip()
+
+
+def is_likely_resume_heading(line):
+    """Return True for short section-like headings that should not join bullets."""
+    heading_names = {
+        "summary",
+        "profile",
+        "objective",
+        "skills",
+        "technical skills",
+        "core skills",
+        "experience",
+        "work experience",
+        "professional experience",
+        "projects",
+        "education",
+        "publications",
+        "publication",
+        "research",
+        "conference",
+    }
+    normalized = line.lower().strip(":")
+    return normalized in heading_names
+
+
+def line_can_continue_bullet(line):
+    """Return True if a line looks like wrapped text from the previous bullet."""
+    if starts_like_resume_bullet(line):
+        return False
+    if is_likely_resume_heading(line):
+        return False
+    if get_bullet_action_verb(line) in ACTION_VERBS:
+        return False
+    return bool(get_words(line))
+
+
+def combine_wrapped_resume_bullet_lines(resume_text):
+    """
+    Join PDF-wrapped bullet lines before detecting bullets.
+
+    Some PDFs extract one visual bullet as multiple text lines. If the first
+    line does not end like a complete sentence, the next plain text line is
+    treated as a continuation instead of a separate bullet.
+    """
+    combined_lines = []
+    current_bullet = ""
+
+    for raw_line in resume_text.splitlines():
+        clean_line = raw_line.strip()
+        if not clean_line:
+            if current_bullet:
+                combined_lines.append(current_bullet)
+                current_bullet = ""
+            continue
+
+        is_bullet_start = starts_like_resume_bullet(clean_line)
+        starts_with_action = get_bullet_action_verb(clean_line) in ACTION_VERBS
+
+        if current_bullet and line_can_continue_bullet(clean_line):
+            current_bullet = current_bullet + " " + clean_line
+            if clean_line.endswith((".", "!", "?")):
+                combined_lines.append(current_bullet)
+                current_bullet = ""
+        else:
+            if current_bullet:
+                combined_lines.append(current_bullet)
+                current_bullet = ""
+
+            if is_bullet_start or starts_with_action:
+                current_bullet = clean_line
+                if clean_line.endswith((".", "!", "?")):
+                    combined_lines.append(current_bullet)
+                    current_bullet = ""
+            else:
+                combined_lines.append(clean_line)
+
+    if current_bullet:
+        combined_lines.append(current_bullet)
+
+    return combined_lines
+
+
 def detect_resume_bullets(resume_text):
     """
     Detect likely resume bullets.
@@ -954,18 +1041,18 @@ def detect_resume_bullets(resume_text):
     """
     bullets = []
 
-    for line in resume_text.splitlines():
-        clean_line = line.strip()
+    for clean_line in combine_wrapped_resume_bullet_lines(resume_text):
+        clean_line = clean_line.strip()
         if not clean_line:
             continue
 
-        starts_like_bullet = clean_line.startswith(("-", "*", "•", "–"))
+        starts_like_bullet = starts_like_resume_bullet(clean_line)
         word_count = len(get_words(clean_line))
         starts_with_action = get_bullet_action_verb(clean_line) in ACTION_VERBS
 
         if starts_like_bullet:
-            bullets.append(clean_line.lstrip("-*•– ").strip())
-        elif 6 <= word_count <= 45 and starts_with_action:
+            bullets.append(clean_resume_bullet_marker(clean_line))
+        elif word_count >= 6 and starts_with_action:
             bullets.append(clean_line)
 
     # Fallback: if no bullets were detected, use sentence-like lines.
@@ -1994,9 +2081,13 @@ def bullet_analysis_list(items, empty_message):
         displayed_transferable = display_transferable_skills(item.get("transferable", []))
         transferable = ", ".join(displayed_transferable) if displayed_transferable else "none"
         lines.append(
-            f"- {item['text']}  \n  Match type: {item.get('match_type', 'Low relevance')}. Direct keywords: {direct}. Transferable skills: {transferable}. Reason: {item.get('reason', 'Review manually.')}"
+            f"- {item['text']}  \n"
+            f"  **Match type:** {item.get('match_type', 'Low relevance')}  \n"
+            f"  **Direct keywords:** {direct}  \n"
+            f"  **Transferable skills:** {transferable}  \n"
+            f"  **Reason:** {item.get('reason', 'Review manually.')}"
         )
-    return "\n".join(lines)
+    return "\n\n".join(lines)
 
 
 def create_resume_strengths(matched_critical, matched_normal, strongest_bullets):
